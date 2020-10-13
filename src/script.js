@@ -8,8 +8,8 @@ const updatePreview = () => {
 
 // FUNCTION SETS VERTICAL LAYOUT
 const setVerticalLayout = () => {
-    $("#windows").removeClass("windows-horizontal")
-        .addClass("windows-vertical");
+    $("#windows").removeClass("layout-horizontal")
+        .addClass("layout-vertical");
 
     $("#btn-v").addClass("btn-active");
     $("#btn-h").removeClass("btn-active");
@@ -19,8 +19,8 @@ const setVerticalLayout = () => {
 
 // FUNCTION SETS HORIZONTAL LAYOUT
 const setHorizontalLayout = () => {
-    $("#windows").removeClass("windows-vertical")
-        .addClass("windows-horizontal");
+    $("#windows").removeClass("layout-vertical")
+        .addClass("layout-horizontal");
 
     $("#btn-h").addClass("btn-active");
     $("#btn-v").removeClass("btn-active");
@@ -29,6 +29,9 @@ const setHorizontalLayout = () => {
 
 
 $(document).ready(() => {
+    // UPDATE PREVIEW
+    updatePreview();
+
     // ADD UPDATE ACTION
     $("#editor").on("input", updatePreview);
 

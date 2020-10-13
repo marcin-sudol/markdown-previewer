@@ -1,7 +1,18 @@
+// ----------
 // VARIABLES
+// ----------
 $vertical-breakdown: 1000px;
+
 $color-light: #eee;
-$color-accent-dark: darkslateblue;
+$color-light-highlight: #ddd;
+$color-medium: #999;
+$color-dark: #2364aa;
+$color-dark-highlight: #3da5d9;
+$color-accent: #ea7317;
+
+@mixin shadow {
+  box-shadow: 0px 4px 8px $color-medium;
+}
 
 * {
   margin: 0;
@@ -15,6 +26,7 @@ main {
   display: grid;
   grid-template-rows: auto 1fr;
   min-height: 100vh;
+  background: $color-light-highlight;
 
   @media (max-width: $vertical-breakdown) {
     grid-template-rows: 1fr;
@@ -24,25 +36,33 @@ main {
 // ----------
 // NAV
 // ----------
-#nav-buttons {
+#nav {
   display: flex;
   flex-direction: row;
   justify-content: center;
 
   button {
-    margin: 15px;
-    padding: 10px 30px;
-    width: 180px;
-    border: 1px solid $color-accent-dark;
-    border-radius: 5px;
+    margin: 20px;
+    margin-bottom: 0px;
+    padding: 10px 25px;
+    background: white;
+    border: none;
+    border-radius: 9999px;
     font-size: 16px;
-    color: $color-accent-dark;
+    color: $color-dark;
     cursor: pointer;
+    @include shadow;
+    &:hover {
+      background: $color-accent;
+    }
   }
 
   .btn-active {
-    background-color: $color-accent-dark;
+    background-color: $color-dark;
     color: white;
+    &:hover {
+      background: $color-dark;
+    }
   }
 
   @media (max-width: $vertical-breakdown) {
@@ -55,29 +75,29 @@ main {
 // ----------
 #windows {
   display: flex;
-  border-top: 1px solid black;
+  padding: 15px;
 
   .container {
     display: flex;
+    padding: 10px;
     flex-direction: column;
-    padding: 15px;
 
     .header {
       flex: 0 0 auto;
-      margin-bottom: 15px;
       padding: 5px;
-      background: $color-light;
-      border: none;
-      border-radius: 5px;
+      background: $color-dark-highlight;
       text-align: center;
+      color: $color-light;
+      font-weight: bold;
+      @include shadow;
     }
 
     .content {
       flex: 1 1 auto;
-      padding: 5px;
-      background: $color-light;
+      padding: 10px;
+      background: white;
       border: none;
-      border-radius: 5px;
+      @include shadow;
     }
 
     textarea {
@@ -111,12 +131,12 @@ main {
   flex-direction: row;
 
   #editor-container {
-    height: 100%;
+    max-height: 100%;
     width: 40%;
   }
 
   #preview-container {
-    height: 100%;
+    max-height: 100%;
     width: 60%;
   }
 }
@@ -124,18 +144,18 @@ main {
 // ----------
 // CLASS FOR VERTICAL LAYOUT
 // ----------
-.windows-vertical {
-  @include layout-vertical();
+.layout-vertical {
+  @include layout-vertical;
 }
 
 // ----------
 // CLASS FOR HORIZONTAL LAYOUT
 // ----------
-.windows-horizontal {
-  @include layout-horizontal();
+.layout-horizontal {
+  @include layout-horizontal;
 
   // CHANGE TO VERTICAL ON NARROW SCREEN
   @media (max-width: $vertical-breakdown) {
-    @include layout-vertical();
+    @include layout-vertical;
   }
 }
