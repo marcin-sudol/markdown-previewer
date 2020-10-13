@@ -34,6 +34,11 @@ main {
     cursor: pointer;
   }
 
+  .btn-active {
+    background-color: darkslateblue;
+    color: white;
+  }
+
   @media (max-width: $vertical-breakdown) {
     display: none;
   }
@@ -66,27 +71,56 @@ main {
   }
 }
 
-.windows-vertical {
+// ----------
+// MIXIN FOR VERTICAL LAYOUT
+// ----------
+@mixin layout-vertical {
   flex-direction: column;
 
   #editor-container {
     height: 40%;
     min-height: 300px;
+    width: 100%;
   }
   #preview-container {
     height: 60%;
     min-height: 400px;
+    width: 100%;
   }
 }
 
-.windows-horizontal {
+// ----------
+// MIXIN FOR HORIZONTAL LAYOUT
+// ----------
+@mixin layout-horizontal {
   flex-direction: row;
 
   #editor-container {
+    height: 100%;
     width: 40%;
   }
 
   #preview-container {
+    height: 100%;
     width: 60%;
+  }
+}
+
+// ----------
+// CLASS FOR VERTICAL LAYOUT
+// ----------
+.windows-vertical {
+  @include layout-vertical();
+}
+
+// ----------
+// CLASS FOR HORIZONTAL LAYOUT
+// ----------
+.windows-horizontal {
+  @include layout-horizontal();
+
+  // CHANGE TO VERTICAL ON NARROW SCREEN
+  @media (max-width: $vertical-breakdown) {
+    @include layout-vertical();
   }
 }
