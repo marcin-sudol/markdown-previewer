@@ -7,24 +7,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 
-    <!-- BOOTSTRAP CDN -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-
     <!-- FONTAWESOME CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
         integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
         crossorigin="anonymous" />
 
-    <!-- LOCAL CSS -->
     <link rel="stylesheet" href="main.css">
 
     <!-- PAGE METATAGS -->
     <meta name="author" content="Marcin Sudoł">
-    <meta name="description" content="">
-    <meta name="keywords" content="">
+    <meta name="description" content="Markdown Previewer">
+    <meta name="keywords" content="markdown, previewer">
 
-    <title>Title</title>
+    <title>Markdown Previewer</title>
 
 </head>
 
@@ -32,8 +27,27 @@
 
 <body>
 
-    <div id="content"></div>
 
+    <main>
+        <nav id="nav-buttons">
+            <button type="button">Horizontal</button>
+            <button type="button">Vertical</button>
+        </nav>
+
+        <div id="windows" class="windows-horizontal">
+
+            <div class="container" id="editor-container">
+                <header class="header">Editor</header>
+                <textarea class="content" id="editor">
+                </textarea>
+            </div>
+
+            <div class="container" id="preview-container">
+                <header class="header">Preview</header>
+                <div class="content">Some text</div>
+            </div>
+        </div>
+    </main>
 
 
 
@@ -43,20 +57,11 @@
         integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     -->
 
-    <!-- SCRIPTS FOR BOOTSTRAP -->
-    <!-- JQUERY SLIM (ONLY IF FULL JQUERY IS NOT LOADED) -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
 
-    <!-- POPPER.JS -->
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-        crossorigin="anonymous"></script>
 
-    <!-- BOOTSTRAP -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    <!-- MARKED LIBRARY -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/1.1.1/marked.min.js"
+        integrity="sha512-KCyhJjC9VsBYne93226gCA0Lb+VlrngllQqeCmX+HxBBHTC4HX2FYgEc6jT0oXYrLgvfglK49ktTTc0KVC1+gQ=="
         crossorigin="anonymous"></script>
 
 
