@@ -3,16 +3,15 @@
 // ----------
 $vertical-breakdown: 1000px;
 
-$color-light: #ddd;
+$color-light: #eee;
 $color-light-highlight: #bbb;
 $color-medium: #999;
 $color-dark: #323031;
 
-$accent-light: #ffdc97;
-$accent-light-highlight: #ffc857;
-$accent-medium: #db3a34;
-$accent-dark: #177e89;
-$accent-dark-highlight: #084c61;
+$accent-dark: #00a3f5;
+$accent-dark-highlight: #30323d;
+
+$font-em: "Audiowide", cursive;
 
 * {
   box-sizing: border-box;
@@ -26,9 +25,8 @@ body {
 main {
   display: grid;
   grid-template-rows: auto 1fr;
-  height: auto;
   min-height: 100vh;
-  background: $color-dark;
+  background: $color-light;
 
   @media (max-width: $vertical-breakdown) {
     grid-template-rows: 1fr;
@@ -44,29 +42,28 @@ main {
   justify-content: center;
 
   button {
-    margin: 20px;
+    margin: 25px 15px;
     margin-bottom: 0px;
-    padding: 10px 25px;
-    background: $color-light;
+    padding: 15px 25px;
+    background: white;
     border: none;
-    border-radius: 9999px;
+    border-radius: 5px;
+    font-family: monospace;
     font-size: 14px;
     font-weight: bold;
     color: $color-dark;
     cursor: pointer;
-    transition: background-color 0.3s ease, background-image 0.3s ease,
-      box-shadow 0.3s ease;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 
     &.btn-active {
-      background-color: $accent-light-highlight;
-      background-image: linear-gradient($accent-light-highlight, $accent-light);
+      background-color: $accent-dark;
+      color: white;
     }
 
     &:not(.btn-active):hover {
-      background-color: $accent-dark;
-      background-image: linear-gradient($accent-dark-highlight, $accent-dark);
-      color: $color-light;
-      box-shadow: 0px 0px 0px 3px $color-light;
+      background-color: $accent-dark-highlight;
+      color: white;
+      //box-shadow: 0px 0px 0px 3px white;
     }
   }
 
@@ -90,20 +87,21 @@ main {
     .header {
       flex: 0 0 auto;
       padding: 5px;
-      background-color: $accent-light-highlight;
-      background-image: linear-gradient($accent-light-highlight, $accent-light);
-      border-bottom: 4px solid $color-dark;
+      background-color: $accent-dark;
+      // border-bottom: 2px solid $color-dark;
       text-align: center;
-      color: $color-dark;
+      font-family: $font-em;
+      font-size: 16px;
       font-weight: bold;
+      text-transform: uppercase;
+      color: white;
     }
 
     .content {
       flex: 1 1 auto;
       padding: 10px;
-      background: $color-light;
+      background: white;
       border: none;
-      box-shadow: inset 0px 0px 3px $color-dark;
     }
 
     textarea {
@@ -120,14 +118,10 @@ main {
   flex-direction: column;
 
   #editor-container {
-    height: 40%;
-    min-height: 300px;
-    width: 100%;
+    flex: 0 0 400px;
   }
   #preview-container {
-    height: 60%;
-    min-height: 400px;
-    width: 100%;
+    flex: 1 0 auto;
   }
 }
 
@@ -138,13 +132,11 @@ main {
   flex-direction: row;
 
   #editor-container {
-    max-height: 100%;
-    width: 40%;
+    flex: 1 1 40%;
   }
 
   #preview-container {
-    max-height: 100%;
-    width: 60%;
+    flex: 1 1 60%;
   }
 }
 

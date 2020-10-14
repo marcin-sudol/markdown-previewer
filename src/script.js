@@ -1,3 +1,5 @@
+const initialText = "# Header\n## Subheader\n---\n\nText formatting examples:  \n**bold text**  \nInline code: `int x = 10;`\n\nBlock code: \n```\nconst add = (x, y) => (x + y);\n```\n\nBlockquote:\n> Logic will get you from A to Z; imagination will get you verywhere\n\nUnordered list:\n- item a\n- item b\n- item c\n\nOrdered list:\n1. item 1\n1. item 2\n1. item 3\n\nLink: [my codepen]\n\nPicture:  \n![logo]\n\n[my codepen]: https://codepen.io/marsud\n[logo]: https://brand.jquery.org/resources/jquery-mark-light.gif";
+
 
 
 // UPDATE PREVIEW
@@ -32,6 +34,10 @@ const setHorizontalLayout = () => {
 
 
 $(document).ready(() => {
+
+    // SET INITIAL TEXT
+    $("#editor").val(initialText);
+
     // UPDATE PREVIEW
     updatePreview();
 
