@@ -4,13 +4,10 @@
 $vertical-breakdown: 1000px;
 
 $color-light: #eee;
-$color-light-highlight: #bbb;
-$color-medium: #999;
-$color-dark: #323031;
+$accent-light: #0496ff;
+$accent-dark: #293132;
 
-$accent-dark: #00a3f5;
-$accent-dark-highlight: #30323d;
-
+$font-normal: "Montserrat", sans-serif;
 $font-em: "Audiowide", cursive;
 
 * {
@@ -26,7 +23,7 @@ main {
   display: grid;
   grid-template-rows: auto 1fr;
   min-height: 100vh;
-  background: $color-light;
+  background: white;
 
   @media (max-width: $vertical-breakdown) {
     grid-template-rows: 1fr;
@@ -44,14 +41,13 @@ main {
   button {
     margin: 25px 15px;
     margin-bottom: 0px;
-    padding: 15px 25px;
-    background: white;
+    padding: 10px 25px;
+    width: 190px;
+    background: $color-light;
     border: none;
     border-radius: 5px;
-    font-family: monospace;
-    font-size: 14px;
-    font-weight: bold;
-    color: $color-dark;
+    font-family: $font-normal;
+    color: $accent-dark;
     cursor: pointer;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 
@@ -61,7 +57,7 @@ main {
     }
 
     &:not(.btn-active):hover {
-      background-color: $accent-dark-highlight;
+      background-color: $accent-light;
       color: white;
       //box-shadow: 0px 0px 0px 3px white;
     }
@@ -86,13 +82,11 @@ main {
 
     .header {
       flex: 0 0 auto;
-      padding: 5px;
+      padding: 1px;
       background-color: $accent-dark;
-      // border-bottom: 2px solid $color-dark;
       text-align: center;
-      font-family: $font-em;
+      font-family: $font-normal;
       font-size: 16px;
-      font-weight: bold;
       text-transform: uppercase;
       color: white;
     }
@@ -100,13 +94,18 @@ main {
     .content {
       flex: 1 1 auto;
       padding: 10px;
-      background: white;
-      border: none;
     }
 
-    textarea {
+    #editor {
+      background: $color-light;
+      border: none;
       font-size: 14px;
       resize: none;
+    }
+
+    #preview {
+      background: white;
+      border: 1px solid $accent-dark;
     }
   }
 }

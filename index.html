@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 
     <!-- GOOGLE FONT -->
-    <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Montserrat&display=swap" rel="stylesheet">
 
     <!-- FONTAWESOME CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
@@ -20,7 +20,7 @@
     <!-- PAGE METATAGS -->
     <meta name="author" content="Marcin Sudoł">
     <meta name="description" content="Markdown Previewer">
-    <meta name="keywords" content="markdown, previewer">
+    <meta name="keywords" content="markdown, previewer, jquery, scss">
 
     <title>Markdown Previewer</title>
 
@@ -33,19 +33,19 @@
 
     <main>
         <nav id="nav">
-            <button type="button" id="btn-v"><i class="fas fa-arrows-alt-v"></i> Vertical layout</button>
             <button type="button" id="btn-h"><i class="fas fa-arrows-alt-h"></i> Horizontal layout</button>
+            <button type="button" id="btn-v"><i class="fas fa-arrows-alt-v"></i> Vertical layout</button>
         </nav>
 
-        <div id="windows" class="layout-vertical">
+        <div id="windows" class="layout-horizontal">
 
             <div class="container" id="editor-container">
-                <header class="header">Editor</header>
+                <header class="header"><i class="fas fa-pen"></i> Editor</header>
                 <textarea class="content" id="editor"></textarea>
             </div>
 
             <div class="container" id="preview-container">
-                <header class="header">Preview</header>
+                <header class="header"><i class="far fa-window-maximize"></i> Preview</header>
                 <div class="content" id="preview"></div>
             </div>
         </div>
