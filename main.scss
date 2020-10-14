@@ -8,22 +8,25 @@ $color-light-highlight: #bbb;
 $color-medium: #999;
 $color-dark: #323031;
 
-$accent-light: #ffc857;
+$accent-light: #ffdc97;
+$accent-light-highlight: #ffc857;
 $accent-medium: #db3a34;
 $accent-dark: #177e89;
 $accent-dark-highlight: #084c61;
 
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
-  font-family: "Courier New", Courier, monospace;
   // border: 1px solid black;
+}
+
+body {
+  margin: 0px;
 }
 
 main {
   display: grid;
   grid-template-rows: auto 1fr;
+  height: auto;
   min-height: 100vh;
   background: $color-dark;
 
@@ -51,16 +54,20 @@ main {
     font-weight: bold;
     color: $color-dark;
     cursor: pointer;
+    transition: background-color 0.3s ease, background-image 0.3s ease,
+      box-shadow 0.3s ease;
+
+    &.btn-active {
+      background-color: $accent-light-highlight;
+      background-image: linear-gradient($accent-light-highlight, $accent-light);
+    }
 
     &:not(.btn-active):hover {
-      background: $accent-dark;
+      background-color: $accent-dark;
+      background-image: linear-gradient($accent-dark-highlight, $accent-dark);
       color: $color-light;
       box-shadow: 0px 0px 0px 3px $color-light;
     }
-  }
-
-  .btn-active {
-    background: $accent-light;
   }
 
   @media (max-width: $vertical-breakdown) {
@@ -83,7 +90,8 @@ main {
     .header {
       flex: 0 0 auto;
       padding: 5px;
-      background: $accent-light;
+      background-color: $accent-light-highlight;
+      background-image: linear-gradient($accent-light-highlight, $accent-light);
       border-bottom: 4px solid $color-dark;
       text-align: center;
       color: $color-dark;

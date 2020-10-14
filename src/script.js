@@ -1,7 +1,10 @@
 
+
 // UPDATE PREVIEW
 const updatePreview = () => {
-    $("#preview").html(marked($("#editor").val()));
+    //let previewHtml = $("#editor").val().split('\n').map(line => marked(line)).join('<br>');
+    let previewHtml = marked($("#editor").val());
+    $("#preview").html(previewHtml);
 };
 
 
