@@ -1,6 +1,6 @@
 
 // INITIAL TEXT
-const initialText = "# Header\n## Subheader\n---\n\nText formatting examples:\n**bold text**\nInline code: `int x = 10;`\nBlock code:\n```\nconst add = (x, y) => (x + y);\n```\nBlockquote:\n> Logic will get you from A to Z; imagination will get you verywhere\n\nUnordered list:\n- item a\n- item b\n- item c\n\nOrdered list:\n1. item 1\n1. item 2\n1. item 3\n\nLink: [my pens]\n\nPicture:\n![logo]\n\n[my pens]: https://codepen.io/marsud/pens/public\n[logo]: https://brand.jquery.org/resources/jquery-mark-light.gif";
+const initialText = "# Header\n## Subheader\n---\n\nText formatting examples:\n**bold text**\nInline code: `int x = 10;`\nBlock code:\n```\nconst add = (x, y) => (x + y);\n```\nBlockquote:\n> Logic will get you from A to Z; imagination will get you verywhere\n\nUnordered list:\n- item a\n- item b\n- item c\n\nOrdered list:\n1. item 1\n1. item 2\n1. item 3\n\nLink: [FCC]\n\nPicture:\n![logo]\n\n[FCC]: https://freecodecamp.org\n[logo]: https://brand.jquery.org/resources/jquery-mark-light.gif";
 
 
 
