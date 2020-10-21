@@ -1,0 +1,91 @@
+* {
+  box-sizing: border-box; }
+
+body {
+  margin: 0px; }
+
+main {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  min-height: 100vh;
+  background: white; }
+  @media (max-width: 1000px) {
+    main {
+      grid-template-rows: 1fr; } }
+
+#nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center; }
+  #nav button {
+    margin: 25px 15px;
+    margin-bottom: 0px;
+    padding: 10px 25px;
+    width: 190px;
+    background: #eee;
+    border: none;
+    border-radius: 5px;
+    font-family: "Montserrat", sans-serif;
+    color: #293132;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; }
+    #nav button.btn-active {
+      background-color: #293132;
+      color: white; }
+    #nav button:not(.btn-active):hover {
+      background-color: #0496ff;
+      color: white; }
+  @media (max-width: 1000px) {
+    #nav {
+      display: none; } }
+
+#windows {
+  display: flex;
+  padding: 15px; }
+  #windows .container {
+    display: flex;
+    padding: 10px;
+    flex-direction: column; }
+    #windows .container .header {
+      flex: 0 0 auto;
+      padding: 1px;
+      background-color: #293132;
+      text-align: center;
+      font-family: "Montserrat", sans-serif;
+      font-size: 16px;
+      text-transform: uppercase;
+      color: white; }
+    #windows .container .content {
+      flex: 1 1 auto;
+      padding: 10px; }
+    #windows .container #editor {
+      background: #eee;
+      border: none;
+      font-size: 14px;
+      resize: none; }
+    #windows .container #preview {
+      background: white;
+      border: 1px solid #293132; }
+
+.layout-vertical {
+  flex-direction: column; }
+  .layout-vertical #editor-container {
+    flex: 0 0 400px; }
+  .layout-vertical #preview-container {
+    flex: 1 0 auto; }
+
+.layout-horizontal {
+  flex-direction: row; }
+  .layout-horizontal #editor-container {
+    flex: 1 1 40%; }
+  .layout-horizontal #preview-container {
+    flex: 1 1 60%; }
+  @media (max-width: 1000px) {
+    .layout-horizontal {
+      flex-direction: column; }
+      .layout-horizontal #editor-container {
+        flex: 0 0 400px; }
+      .layout-horizontal #preview-container {
+        flex: 1 0 auto; } }
+
+/*# sourceMappingURL=style.css.map */
